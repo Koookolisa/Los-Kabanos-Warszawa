@@ -48,14 +48,13 @@ header {
 .nav-links a { color: var(--text-color); font-weight: 600; font-size: 0.9rem; }
 .nav-links a:hover { color: var(--primary-color); }
 
-/* Hamburger */
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
 .hamburger .bar { width: 25px; height: 3px; background: white; transition: 0.3s; }
 
 /* Hero */
 #hero {
     height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-color)), url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1920&auto=format&fit=crop');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg-color)), url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1920&auto=format&fit=crop');
     background-size: cover; background-position: center;
 }
 #hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
@@ -73,9 +72,10 @@ header {
     border-radius: var(--border-radius); padding: 30px;
 }
 .arena-card { display: flex; align-items: center; gap: 15px; padding: 20px; }
+.arena-card.retired { opacity: 0.5; filter: grayscale(100%); border: 1px dashed #444; }
 .arena-icon { font-size: 2rem; }
 
-/* SQUAD & TACTICS - KEY CHANGES HERE */
+/* SQUAD */
 .date-badge {
     display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 15px;
     border-radius: 20px; font-size: 0.9rem; margin-top: 10px;
@@ -89,12 +89,12 @@ header {
     display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start;
 }
 
-/* RINK UI - IMPROVED */
+/* RINK UI - FIXED */
 .field-container {
     position: sticky; top: 100px;
     background: #111; border-radius: 40px;
     border: 2px solid #333;
-    height: 500px; width: 100%;
+    height: 550px; width: 100%; /* Wysokie boisko, żeby było czytelne */
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
@@ -114,41 +114,63 @@ header {
 }
 
 .goal-crease {
-    position: absolute; width: 60px; height: 30px; left: 50%; transform: translateX(-50%);
+    position: absolute; width: 80px; height: 40px; left: 50%; transform: translateX(-50%);
     border: 2px solid var(--primary-color); background: rgba(255,69,0,0.1);
 }
 .goal-crease.top { top: 0; border-top: none; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
 .goal-crease.bottom { bottom: 0; border-bottom: none; border-top-left-radius: 20px; border-top-right-radius: 20px; }
 
-/* PLAYER DOTS - FIXED POSITIONS */
+/* PLAYER DOTS - STABILNE (BEZ ANIMACJI) */
 .player-dot {
-    position: absolute; width: 45px; height: 45px;
+    position: absolute; 
+    width: 50px; height: 50px; /* Większe kropki */
     background: #222; border: 2px solid white; border-radius: 50%;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     color: white; z-index: 10; cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.2s, background 0.2s;
-    /* Kluczowe dla centrowania */
+    transition: transform 0.2s, background 0.2s; /* Tylko transition dla hovera */
     transform: translate(-50%, -50%); 
+    text-align: center;
+    /* Blokada dziedziczenia animacji */
+    animation: none !important; 
 }
 
-.player-dot:hover { transform: translate(-50%, -50%) scale(1.2); background: var(--primary-color); border-color: var(--primary-color); }
-.player-dot .p-num { font-weight: 800; font-size: 14px; line-height: 1; }
-.player-dot .p-role { font-size: 8px; opacity: 0.8; text-transform: uppercase; margin-top: 1px;}
+.player-dot:hover { 
+    transform: translate(-50%, -50%) scale(1.15); 
+    background: var(--primary-color); 
+    border-color: var(--primary-color); 
+    z-index: 20;
+}
 
-/* Konkretne pozycje (procentowe dla responsywności) */
-.pos-gk { top: 88%; left: 50%; border-color: #555; background: #000; cursor: default; }
-.pos-ld { top: 70%; left: 25%; } /* Lewa Obrona */
-.pos-rd { top: 70%; right: 25%; transform: translate(50%, -50%); } /* Prawa Obrona - fix right anchor */
-.pos-c  { top: 50%; left: 50%; width: 55px; height: 55px; z-index: 11; border-color: var(--primary-color); } /* Środek */
-.pos-la { top: 25%; left: 20%; } /* Lewy Atak */
-.pos-ra { top: 25%; right: 20%; transform: translate(50%, -50%); } /* Prawy Atak */
+.p-num { 
+    font-weight: 900; 
+    font-size: 15px; /* Duży numer */
+    line-height: 1; 
+    color: white;
+    text-shadow: 0 1px 2px black;
+}
 
-/* Style specyficzne dla statusów kropek */
+.p-role { 
+    font-size: 9px; 
+    opacity: 0.9; 
+    text-transform: uppercase; 
+    font-weight: 600;
+}
+
+/* Pozycje - precyzyjne % */
+.pos-gk { top: 90%; left: 50%; border-color: #555; background: #000; cursor: default; }
+.pos-ld { top: 70%; left: 25%; } 
+.pos-rd { top: 70%; left: 75%; } /* Używamy left: 75% zamiast right dla stabilności */
+.pos-c  { top: 50%; left: 50%; width: 60px; height: 60px; z-index: 11; border-color: var(--primary-color); }
+.pos-la { top: 25%; left: 25%; } 
+.pos-ra { top: 25%; left: 75%; } /* Używamy left: 75% zamiast right dla stabilności */
+
 .warning-dot { border-color: var(--accent-yellow); color: var(--accent-yellow); }
-.mvp-dot { box-shadow: 0 0 20px rgba(255,69,0,0.4); background: white; color: black; }
+.mvp-dot { box-shadow: 0 0 20px rgba(255,69,0,0.4); background: white; }
+.mvp-dot .p-num { color: black; text-shadow: none; }
+.mvp-dot .p-role { color: #333; }
 
-/* Player Cards Grid */
+/* Player Cards */
 .players-grid { display: grid; gap: 20px; }
 
 .player-card {
@@ -179,7 +201,7 @@ header {
 .fix { border-top: 2px solid var(--accent-yellow); }
 .fix h4 { color: var(--accent-yellow); }
 
-/* Bench Section */
+/* Bench */
 .bench-section { margin-top: 40px; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,0.2); }
 .bench-grid { display: grid; gap: 15px; margin-top: 15px; }
 .bench-card { display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px; }
@@ -204,11 +226,29 @@ header {
 .product-btn { width: 100%; padding: 10px; background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); font-weight: 700; cursor: pointer; transition: 0.3s; border-radius: 8px; }
 .product-btn:hover { background: var(--primary-color); color: white; }
 
+/* HISTORY SECTION */
+.history-content {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius); padding: 40px; max-width: 800px; margin: 0 auto;
+}
+.history-header h2 { font-size: 2rem; margin-bottom: 5px; }
+.divider { width: 60px; height: 4px; background: var(--primary-color); margin: 10px auto 30px auto; }
+.history-text { font-size: 1rem; color: #e0e0e0; line-height: 1.8; text-align: center; }
+.memorial-box {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px; border-radius: 15px; margin: 30px 0;
+}
+.memorial-box h3 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 15px; }
+
 /* Mobile */
 @media (max-width: 768px) {
     #hero h1 { font-size: 2.5rem; }
     .squad-wrapper { grid-template-columns: 1fr; }
-    .field-container { height: 400px; margin-bottom: 20px; }
+    .field-container { height: 450px; margin-bottom: 20px; }
+    /* Kropki na mobilu nadal widoczne */
+    .player-dot { width: 45px; height: 45px; }
+    .p-num { font-size: 12px; }
+    
     .nav-links { position: fixed; right: -100%; top: 0; height: 100vh; width: 70%; background: black; flex-direction: column; justify-content: center; transition: 0.4s; z-index: 999; }
     .nav-links.active { right: 0; }
     .hamburger { display: flex; z-index: 1001; }
