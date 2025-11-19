@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Hamburger Logic
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li a');
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Reveal Animation
+    // Proste pojawianie się
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -24,26 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transition = '1s';
+        observer.observe(el);
+    });
 
-    // Player Interaction
-    const playerDots = document.querySelectorAll('.player-dot');
-    
-    playerDots.forEach(dot => {
+    // Klikanie w kropki
+    document.querySelectorAll('.dot').forEach(dot => {
         dot.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href').substring(1);
-            const targetCard = document.getElementById(targetId);
-
-            if(targetCard) {
+            const id = this.getAttribute('href').substring(1);
+            const card = document.getElementById(id);
+            if(card) {
                 document.querySelectorAll('.player-card').forEach(c => c.classList.remove('highlight'));
-                
-                setTimeout(() => {
-                    targetCard.classList.add('highlight');
-                    setTimeout(() => {
-                        targetCard.classList.remove('highlight');
-                    }, 2000);
-                }, 100);
+                setTimeout(() => card.classList.add('highlight'), 100);
+                setTimeout(() => card.classList.remove('highlight'), 2000);
             }
         });
+    });
+});
+
+// Dodatek do styli dla animacji reveal w JS
+document.addEventListener('scroll', function() {
+    document.querySelectorAll('.reveal.visible').forEach(el => {
+        el.style.opacity = '1';
     });
 });
