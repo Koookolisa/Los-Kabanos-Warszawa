@@ -6,16 +6,14 @@
     <title>Los Kabanos - Raport Taktyczny</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Barlow:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="bg-overlay"></div> <!-- Warstwa tła carbon -->
-
     <header>
         <div class="container navbar">
-            <a href="#hero" class="logo">LOS KABANOS <span class="accent">WARSZAWA</span></a>
+            <a href="#hero" class="logo">LOS KABANOS <span class="accent">WAW</span></a>
             <ul class="nav-links">
                 <li><a href="#arenas">DYSCYPLINY</a></li>
                 <li><a href="#squad">TAKTYKA</a></li>
@@ -34,47 +32,45 @@
 
         <section id="hero">
             <div class="hero-content reveal">
-                <div class="hero-badge">RAPORT 19.11</div>
-                <h1>DOMINACJA.<br>NIEUNIKNIONA.</h1>
-                <p>Zaczęło się od unihokeja. Teraz przejmujemy wszystko.</p>
-                <a href="#squad" class="btn-neon">ZOBACZ RAPORT</a>
+                <div class="hero-tag">SEZON ZEMSTY</div>
+                <h1>DOMINACJA<br><span class="outline">ABSOLUTNA</span></h1>
+                <p>Zaczęło się od unihokeja. Kończy się na wszystkim.</p>
+                <a href="#squad" class="btn-primary">ZOBACZ RAPORT</a>
             </div>
         </section>
 
+        <!-- SEKCJA DYSCYPLIN -->
         <section id="arenas">
             <div class="container">
                 <div class="section-header reveal">
                     <h2>STREFY WPŁYWÓW</h2>
-                    <div class="header-line"></div>
+                    <div class="orange-line"></div>
                 </div>
-                <div class="arenas-container reveal">
-                    <div class="featured-arena">
-                        <div class="arena-bg-glow"></div>
-                        <div class="arena-icon">🏒</div>
-                        <h3>UNIHOKEJ <span class="crown">👑</span></h3>
-                        <p>Nasz dom. Nasze zasady. Szybkość, agresja i chirurgiczna precyzja.</p>
+                <div class="arenas-grid reveal">
+                    <div class="arena-box main-arena">
+                        <div class="icon">🏒</div>
+                        <h3>UNIHOKEJ</h3>
+                        <p>Fundament. Szybkość i agresja.</p>
                     </div>
-                    <div class="other-arenas-grid">
-                        <div class="arena-card">
-                            <div class="icon">🤾</div>
-                            <h4>RĘCZNA</h4>
-                        </div>
-                        <div class="arena-card">
-                            <div class="icon">🏐</div>
-                            <h4>SIATKÓWKA</h4>
-                        </div>
-                        <div class="arena-card">
-                            <div class="icon">⚽</div>
-                            <h4>NOŻNA</h4>
-                        </div>
-                        <div class="arena-card">
-                            <div class="icon">🏀</div>
-                            <h4>KOSZ</h4>
-                        </div>
-                        <div class="arena-card retired">
-                            <div class="icon">⭕</div>
-                            <h4>RINGO</h4>
-                        </div>
+                    <div class="arena-box">
+                        <div class="icon">🤾</div>
+                        <h3>RĘCZNA</h3>
+                    </div>
+                    <div class="arena-box">
+                        <div class="icon">🏐</div>
+                        <h3>SIATKÓWKA</h3>
+                    </div>
+                    <div class="arena-box">
+                        <div class="icon">⚽</div>
+                        <h3>NOŻNA</h3>
+                    </div>
+                    <div class="arena-box">
+                        <div class="icon">🏀</div>
+                        <h3>KOSZ</h3>
+                    </div>
+                    <div class="arena-box retired">
+                        <div class="icon">⭕</div>
+                        <h3>RINGO</h3>
                     </div>
                 </div>
             </div>
@@ -85,184 +81,139 @@
             <div class="container">
                 <div class="section-header reveal">
                     <h2>RAPORT TAKTYCZNY</h2>
-                    <div class="date-tag">19.11.2025</div>
+                    <div class="data-box">19.11.2025</div>
                 </div>
 
-                <div class="status-bar reveal">
-                    <div class="status-icon">⚠️</div>
-                    <div class="status-text">
-                        <strong>STATUS: EKSPERYMENTALNY</strong>
-                        <span>Hierarchia Lewej Obrony: 11 > 17 > 10.</span>
-                    </div>
+                <div class="alert-banner reveal">
+                    ⚠️ <strong>STATUS: EKSPERYMENTALNY</strong> | Hierarchia Lewej Obrony: 11 &gt; 17 &gt; 10
                 </div>
 
-                <div class="squad-wrapper reveal">
+                <div class="squad-layout reveal">
                     
-                    <!-- UI Boiska -->
-                    <div class="field-wrapper">
-                        <div class="field-container">
-                            <div class="rink-glass">
-                                <div class="rink-texture"></div>
-                                <div class="line center-line"></div>
-                                <div class="crease top"></div>
-                                <div class="crease bottom"></div>
-                                
-                                <!-- Gracze -->
-                                <a href="#card-9" class="player-dot pos-la" data-role="LA">
-                                    <div class="dot-ring"></div>
-                                    <span class="num">9</span>
-                                </a>
-                                
-                                <a href="#card-8" class="player-dot pos-ra warning" data-role="PA">
-                                    <div class="dot-ring"></div>
-                                    <span class="num">8/10</span>
-                                </a>
-
-                                <a href="#card-6" class="player-dot pos-c mvp" data-role="C">
-                                    <div class="dot-ring"></div>
-                                    <span class="num">6</span>
-                                </a>
-
-                                <a href="#card-11" class="player-dot pos-ld warning" data-role="LO">
-                                    <div class="dot-ring"></div>
-                                    <span class="num">11</span>
-                                </a>
-
-                                <a href="#card-13" class="player-dot pos-rd" data-role="PO">
-                                    <div class="dot-ring"></div>
-                                    <span class="num">13</span>
-                                </a>
-
-                                <div class="player-dot pos-gk">
-                                    <span class="icon">🛡️</span>
-                                </div>
-                            </div>
+                    <!-- BOISKO (Fixed) -->
+                    <div class="field-zone">
+                        <div class="rink-matte">
+                            <div class="rink-lines"></div>
+                            <div class="crease top"></div>
+                            <div class="crease bottom"></div>
+                            
+                            <!-- Kropki -->
+                            <a href="#card-9" class="dot pos-la">9</a>
+                            <a href="#card-8" class="dot pos-ra warning">8/10</a>
+                            <a href="#card-6" class="dot pos-c mvp">6</a>
+                            <a href="#card-11" class="dot pos-ld warning">11</a>
+                            <a href="#card-13" class="dot pos-rd">13</a>
+                            <div class="dot pos-gk">GK</div>
                         </div>
                     </div>
 
-                    <!-- Karty Graczy -->
-                    <div class="players-content">
+                    <!-- KARTY ZAWODNIKÓW -->
+                    <div class="cards-zone">
                         
-                        <div class="players-list">
-                            
-                            <!-- ŚRODEK - NR 6 -->
-                            <div id="card-6" class="player-card mvp-card">
-                                <div class="card-bg"></div>
-                                <div class="card-top">
-                                    <span class="role">ŚRODEK (C)</span>
-                                    <span class="badge-mvp">MVP</span>
-                                </div>
-                                <div class="card-main">
-                                    <h3 class="p-name">NR 6 <span class="sub">TECHNICZNY</span></h3>
-                                    <div class="stats-grid">
-                                        <div class="stat">
-                                            <span class="label">SIŁA STRZAŁU</span>
-                                            <div class="bar-container"><div class="bar-fill" style="width: 98%"></div></div>
-                                        </div>
-                                        <div class="stat">
-                                            <span class="label">TECHNIKA</span>
-                                            <div class="bar-container"><div class="bar-fill" style="width: 95%"></div></div>
-                                        </div>
+                        <!-- NR 6 -->
+                        <div id="card-6" class="player-card mvp-card">
+                            <div class="card-label">KAPITAN (C)</div>
+                            <div class="card-body">
+                                <div class="card-num">06</div>
+                                <div class="card-info">
+                                    <h3>TECHNIK</h3>
+                                    <div class="stat-bar">
+                                        <span>SIŁA STRZAŁU (MAX)</span>
+                                        <div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div>
                                     </div>
-                                    <p class="desc">Absolutny lider. <strong>Uderza mocniej niż Nr 9.</strong> Jego strzał to armata. Kreator gry.</p>
+                                    <p>Lider. <strong>Strzela mocniej niż Nr 9.</strong> Armata w rękach.</p>
                                 </div>
                             </div>
-
-                            <!-- LEWY ATAK - NR 9 -->
-                            <div id="card-9" class="player-card">
-                                <div class="card-top"><span class="role">LEWY ATAK</span></div>
-                                <div class="card-main">
-                                    <h3 class="p-name">NR 9 <span class="sub">SNAJPER</span></h3>
-                                    <div class="stats-grid">
-                                        <div class="stat">
-                                            <span class="label">KĄTY NIEMOŻLIWE</span>
-                                            <div class="bar-container"><div class="bar-fill" style="width: 92%"></div></div>
-                                        </div>
-                                    </div>
-                                    <p class="desc">Specjalista od trudnych pozycji. Trafia tam, gdzie inni nie widzą bramki.</p>
-                                </div>
-                            </div>
-
-                            <!-- PRAWY ATAK - NR 8 -->
-                            <div id="card-8" class="player-card warning-card">
-                                <div class="card-top">
-                                    <span class="role">PRAWY ATAK</span>
-                                    <span class="badge-warn">RYWALIZACJA</span>
-                                </div>
-                                <div class="card-main">
-                                    <h3 class="p-name">NR 8 <span class="vs">vs</span> NR 10</h3>
-                                    <p class="desc">Nr 8 prowadzi w wyścigu o skład dzięki stabilności. Nr 10 jest opcją rezerwową lub na obronę.</p>
-                                </div>
-                            </div>
-
-                            <!-- LEWA OBRONA - NR 11 -->
-                            <div id="card-11" class="player-card warning-card">
-                                <div class="card-top">
-                                    <span class="role">LEWA OBRONA</span>
-                                    <span class="badge-warn">ZAGROŻONA</span>
-                                </div>
-                                <div class="card-main">
-                                    <h3 class="p-name">NR 11 <span class="sub">DEFENSOR</span></h3>
-                                    <div class="alert-box">
-                                        ⚠️ <strong>KOREKTA:</strong> Nakaz gry oburącz! Puszczenie kija = ŁAWKA.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- PRAWA OBRONA - NR 13 -->
-                            <div id="card-13" class="player-card">
-                                <div class="card-top"><span class="role">PRAWA OBRONA</span></div>
-                                <div class="card-main">
-                                    <h3 class="p-name">NR 13 <span class="sub">WOJOWNIK</span></h3>
-                                    <p class="desc">Serce do gry. Nadrabia braki walką o każdy centymetr parkietu.</p>
-                                </div>
-                            </div>
-
                         </div>
-                        
-                        <!-- NOWA SEKCJA ŁAWKI -->
-                        <div class="bench-zone reveal">
-                            <h3><span class="icon">👥</span> REZERWA TAKTYCZNA</h3>
-                            
-                            <div class="bench-cards-container">
-                                
-                                <!-- NR 17: POTENCJAŁ -->
-                                <div class="bench-profile potential">
-                                    <div class="bp-header">
-                                        <div class="bp-num">17</div>
-                                        <div class="bp-status">DUŻY POTENCJAŁ</div>
-                                    </div>
-                                    <div class="bp-body">
-                                        <h4>WETERAN TRENINGÓW</h4>
-                                        <p>Mimo braków technicznych, nadrabia stażem. <strong>Główny kandydat na zastępstwo Lewej Obrony</strong> (zaraz po Nr 11).</p>
-                                    </div>
-                                </div>
 
-                                <!-- NR 10: ROTACJA -->
-                                <div class="bench-profile rotation">
-                                    <div class="bp-header">
-                                        <div class="bp-num">10</div>
-                                        <div class="bp-status">ROTACJA</div>
-                                    </div>
-                                    <div class="bp-body">
-                                        <h4>ALTERNATYWA</h4>
-                                        <p>Niestabilny. Opcja nr 3 na obronę lub wejście na atak przy zmęczeniu.</p>
-                                    </div>
+                        <!-- NR 9 -->
+                        <div id="card-9" class="player-card">
+                            <div class="card-label">LEWY ATAK</div>
+                            <div class="card-body">
+                                <div class="card-num">09</div>
+                                <div class="card-info">
+                                    <h3>SNAJPER</h3>
+                                    <p>Magik od trudnych pozycji. Trafia z niemożliwych kątów.</p>
                                 </div>
-
-                                <!-- NR 21: SŁABY -->
-                                <div class="bench-profile critical">
-                                    <div class="bp-header">
-                                        <div class="bp-num">21</div>
-                                        <div class="bp-status">KRYTYCZNY</div>
-                                    </div>
-                                    <div class="bp-body">
-                                        <h4>NAJSŁABSZE OGNIWO</h4>
-                                        <p>Wymaga tytanicznej pracy u podstaw. Obecnie odstaje poziomem od reszty kadry.</p>
-                                    </div>
-                                </div>
-
                             </div>
+                        </div>
+
+                        <!-- NR 8 -->
+                        <div id="card-8" class="player-card warning-card">
+                            <div class="card-label warning">RYWALIZACJA</div>
+                            <div class="card-body">
+                                <div class="card-num">08</div>
+                                <div class="card-info">
+                                    <h3>WALCZAK</h3>
+                                    <p>Prowadzi w walce o skład z Nr 10. Stabilny i groźny.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NR 11 -->
+                        <div id="card-11" class="player-card warning-card">
+                            <div class="card-label warning">ZAGROŻONY</div>
+                            <div class="card-body">
+                                <div class="card-num">11</div>
+                                <div class="card-info">
+                                    <h3>DEFENSOR</h3>
+                                    <p class="text-alert">musi grać oburącz! Puszczenie kija = ławka.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NR 13 -->
+                        <div id="card-13" class="player-card">
+                            <div class="card-label">PRAWA OBRONA</div>
+                            <div class="card-body">
+                                <div class="card-num">13</div>
+                                <div class="card-info">
+                                    <h3>WOJOWNIK</h3>
+                                    <p>Nadrabia sercem. Gryzie parkiet.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ŁAWKA (NOWY STYL) -->
+                        <div class="bench-container reveal">
+                            <h3>REZERWA TAKTYCZNA</h3>
+                            
+                            <!-- Karta Ławki: 17 -->
+                            <div class="bench-panel potential">
+                                <div class="bp-left">
+                                    <div class="bp-num">17</div>
+                                </div>
+                                <div class="bp-right">
+                                    <h4>WETERAN</h4>
+                                    <div class="bp-status">OPCJA NA LEWĄ OBRONĘ</div>
+                                    <p>Trenuje długo. Braki techniczne, ale nadrabia stażem. Pierwszy do wejścia za Nr 11.</p>
+                                </div>
+                            </div>
+
+                            <!-- Karta Ławki: 10 -->
+                            <div class="bench-panel rotation">
+                                <div class="bp-left">
+                                    <div class="bp-num">10</div>
+                                </div>
+                                <div class="bp-right">
+                                    <h4>ROTACJA</h4>
+                                    <div class="bp-status">ZMIENNIK</div>
+                                    <p>Niestabilny. Opcja nr 3 na obronę.</p>
+                                </div>
+                            </div>
+
+                            <!-- Karta Ławki: 21 -->
+                            <div class="bench-panel critical">
+                                <div class="bp-left">
+                                    <div class="bp-num">21</div>
+                                </div>
+                                <div class="bp-right">
+                                    <h4>SŁABE OGNIWO</h4>
+                                    <div class="bp-status alert">POZIOM NISKI</div>
+                                    <p>Odstaje od reszty. Wymaga tytanicznej pracy u podstaw.</p>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
@@ -274,31 +225,32 @@
             <div class="container">
                 <div class="section-header reveal">
                     <h2>ZBROJOWNIA</h2>
+                    <div class="orange-line"></div>
                 </div>
 
                 <div class="shop-grid">
                     <div class="shop-item">
-                        <div class="item-img home">HOME</div>
-                        <div class="item-details">
+                        <div class="shop-img">HOME</div>
+                        <div class="shop-info">
                             <h4>JERSEY DOMOWY</h4>
-                            <div class="price">2,00 PLN</div>
-                            <button class="buy-btn">PERSONALIZUJ</button>
+                            <div class="price">2.00 PLN</div>
+                            <button>PERSONALIZUJ</button>
                         </div>
                     </div>
                     <div class="shop-item">
-                        <div class="item-img away">AWAY</div>
-                        <div class="item-details">
+                        <div class="shop-img away">AWAY</div>
+                        <div class="shop-info">
                             <h4>JERSEY WYJAZD</h4>
                             <div class="price">2.00 PLN</div>
-                            <button class="buy-btn">PERSONALIZUJ</button>
+                            <button>PERSONALIZUJ</button>
                         </div>
                     </div>
                     <div class="shop-item">
-                        <div class="item-img gk">GK WALL</div>
-                        <div class="item-details">
+                        <div class="shop-img gk">GOALKEEPER</div>
+                        <div class="shop-info">
                             <h4>BLUZA GK</h4>
                             <div class="price">2.00 PLN</div>
-                            <button class="buy-btn">PERSONALIZUJ</button>
+                            <button>PERSONALIZUJ</button>
                         </div>
                     </div>
                 </div>
@@ -307,20 +259,15 @@
 
         <section id="history">
             <div class="container reveal">
-                <div class="history-panel">
-                    <div class="history-left">
-                        <h2>ZEMSTA</h2>
-                        <div class="score">0 : 2</div>
-                        <p class="context">Wynik zeszłorocznego finału.</p>
+                <div class="history-block">
+                    <div class="history-score">
+                        <span>0</span><span class="divider">:</span><span>2</span>
                     </div>
-                    <div class="history-right">
-                        <p>Ten wynik to nasza motywacja. Wracamy silniejsi. Wracamy po to, co nasze.</p>
+                    <div class="history-desc">
+                        <h3>RACHUNKI DO WYRÓWNANIA</h3>
+                        <p>Zeszłoroczny finał. Pamiętamy ten wynik. W tym roku idziemy po złoto. Zemsta jest celem.</p>
                         <div class="memorial">
-                            <span class="icon">🕊️</span>
-                            <div>
-                                <strong>GENEZA NAZWY "KABANOS"</strong><br>
-                                Hołd dla poległego zawodnika. Gramy dla Niego.
-                            </div>
+                            <strong>GENEZA "KABANOS":</strong> Nazwa to hołd dla naszego poległego brata. Gramy dla Niego.
                         </div>
                     </div>
                 </div>
@@ -331,12 +278,10 @@
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 LOS KABANOS. TOTALNA DOMINACJA.</p>
+            <p>&copy; 2025 LOS KABANOS WARSZAWA.</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
-</body>
-</html>
 </body>
 </html>
