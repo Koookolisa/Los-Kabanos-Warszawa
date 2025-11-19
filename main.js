@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Hamburger Menu
+    // Hamburger Menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li a');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Scroll Reveal Animation
+    // Scroll Reveal Animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -29,24 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.reveal');
     hiddenElements.forEach((el) => observer.observe(el));
 
-    // 3. Player Highlight Logic
-    // Po kliknięciu w kropkę, karta gracza mignie, żeby było widać o kogo chodzi
+    // Player Highlight Logic
     const playerDots = document.querySelectorAll('.player-dot');
     
     playerDots.forEach(dot => {
         dot.addEventListener('click', function(e) {
-            // Pobieramy ID celu z atrybutu href (np. #card-9)
             const targetId = this.getAttribute('href').substring(1);
             const targetCard = document.getElementById(targetId);
 
             if(targetCard) {
-                // Usuwamy klasę highlight ze wszystkich kart
                 document.querySelectorAll('.player-card').forEach(c => c.classList.remove('highlight'));
                 
-                // Dodajemy do wybranej po małym opóźnieniu (żeby scroll zdążył ruszyć)
                 setTimeout(() => {
                     targetCard.classList.add('highlight');
-                    // Usuwamy podświetlenie po 2 sekundach
                     setTimeout(() => {
                         targetCard.classList.remove('highlight');
                     }, 2000);
