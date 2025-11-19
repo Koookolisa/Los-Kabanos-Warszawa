@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Los Kabanos - Raport Taktyczny</title>
     
-    <!-- Fonty: Teko (Nagłówki), Barlow (Tekst) -->
+    <!-- Fonty -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500;700&family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- 1. ZMIENNE I KONFIGURACJA KOLORÓW --- */
+        /* --- 1. ZMIENNE I KONFIGURACJA --- */
         :root {
-            /* Tło */
             --bg-deep: #080808;
             --bg-panel: #121212;
             --bg-card: #1a1a1a;
             
-            /* Akcenty (Multikolor) */
-            --accent-orange: #ff4500;   /* Główny / MVP */
-            --accent-blue: #00a8ff;     /* Obrona / Stabilność */
-            --accent-purple: #bf00ff;   /* Atak / Technika */
-            --accent-yellow: #ffd700;   /* Ostrzeżenia */
+            /* Kolory Akcentowe */
+            --accent-orange: #ff4500;   /* MVP / Główny */
+            --accent-blue: #00a8ff;     /* Obrona */
+            --accent-purple: #bf00ff;   /* Atak */
+            --accent-yellow: #ffd700;   /* Ostrzeżenia / Niepewne */
             --accent-red: #ff2e2e;      /* Krytyczne */
             --accent-teal: #00ffcc;     /* Wojownik */
             
@@ -32,7 +31,6 @@
             --radius-md: 16px;
             --radius-sm: 8px;
             
-            /* Fonty */
             --font-head: 'Teko', sans-serif;
             --font-body: 'Barlow', sans-serif;
         }
@@ -43,7 +41,7 @@
             background-color: var(--bg-deep);
             color: #f0f0f0;
             font-family: var(--font-body);
-            overflow-x: hidden; /* Zapobiega przewijaniu na boki */
+            overflow-x: hidden;
             
             /* Matowy Carbon Pattern */
             background-image: 
@@ -118,7 +116,7 @@
         .arena-box .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
         .retired { opacity: 0.3; border-style: dashed; }
 
-        /* --- 5. SKŁAD (BOISKO I KARTY) --- */
+        /* --- 5. SKŁAD --- */
         .alert-banner {
             background: rgba(255,69,0,0.1); border: 1px solid var(--accent-orange); border-radius: var(--radius-md);
             padding: 15px; margin-bottom: 30px; text-align: center; color: var(--accent-orange); font-weight: 600;
@@ -126,7 +124,7 @@
 
         .squad-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; }
 
-        /* Responsywne Boisko */
+        /* Boisko */
         .field-zone { position: relative; width: 100%; height: 500px; }
         .rink-matte {
             width: 100%; height: 100%; background: #161616; border: 3px solid #333;
@@ -152,7 +150,7 @@
         }
         .dot:hover { transform: translate(-50%, -50%) scale(1.2); z-index: 20; }
 
-        /* Kolory Kropek */
+        /* Warianty kolorystyczne kropek */
         .dot-mvp { border-color: var(--accent-orange); color: var(--accent-orange); }
         .dot-mvp:hover { background: var(--accent-orange); color: #000; }
         
@@ -162,8 +160,8 @@
         .dot-warn { border-color: var(--accent-yellow); color: var(--accent-yellow); }
         .dot-warn:hover { background: var(--accent-yellow); color: #000; }
         
-        .dot-contest { width: 70px; border-radius: 20px; font-size: 1.2rem; border-color: #fff; }
-        .dot-contest:hover { background: #fff; color: #000; }
+        .dot-teal { border-color: var(--accent-teal); color: var(--accent-teal); }
+        .dot-teal:hover { background: var(--accent-teal); color: #000; }
 
         .pos-gk { top: 90%; left: 50%; border-radius: 8px; width: 45px; height: 25px; font-size: 1rem; background: #000; border-color: #444; cursor: default; }
         .pos-ld { top: 70%; left: 25%; }
@@ -183,7 +181,7 @@
         .player-card:hover { transform: translateX(5px); border-color: #666; }
         .player-card.highlight { transform: scale(1.02); box-shadow: 0 0 30px rgba(255,255,255,0.1); z-index: 5; }
 
-        /* Style Kolorystyczne Kart */
+        /* Style Kart */
         .style-mvp { border-left: 4px solid var(--accent-orange); }
         .style-mvp h3 { color: var(--accent-orange); }
         .style-mvp .progress-fill { background: var(--accent-orange); }
@@ -192,10 +190,6 @@
         .style-skill h3 { color: var(--accent-purple); }
         .style-skill .progress-fill { background: var(--accent-purple); }
         
-        .style-def { border-left: 4px solid var(--accent-blue); }
-        .style-def h3 { color: var(--accent-blue); }
-        .style-def .progress-fill { background: var(--accent-blue); }
-
         .style-warn { border-left: 4px solid var(--accent-yellow); }
         .style-warn h3 { color: var(--accent-yellow); }
         
@@ -206,21 +200,16 @@
         .card-num { font-family: var(--font-head); font-size: 3.5rem; font-weight: 700; color: #333; line-height: 0.8; }
         .style-mvp .card-num { color: var(--accent-orange); opacity: 0.8; }
         
-        .card-info { flex: 1; min-width: 0; } /* min-width zapobiega wylewaniu */
+        .card-info { flex: 1; min-width: 0; }
         .card-info h3 { font-size: 1.4rem; margin-bottom: 5px; }
         .card-info p { font-size: 0.95rem; color: #aaa; line-height: 1.4; word-wrap: break-word; }
         
         .stat-bar { margin-top: 10px; }
         .stat-label { font-size: 0.7rem; color: #666; font-weight: 700; display: block; margin-bottom: 3px; }
         .progress-track { width: 100%; height: 6px; background: #333; border-radius: 10px; }
-        .progress-fill { height: 100%; border-radius: 10px; }
+        .progress-fill { height: 100%; border-radius: 10px; background: #fff; }
 
-        .contest-flex { display: flex; gap: 10px; margin-top: 10px; }
-        .c-box { flex: 1; background: #111; padding: 8px; border-radius: var(--radius-sm); text-align: center; border: 1px solid #333; }
-        .c-box strong { display: block; font-size: 1.2rem; font-family: var(--font-head); }
-        .c-box span { font-size: 0.75rem; color: #777; }
-
-        /* --- 6. HIERARCHIA (MATRYCA) --- */
+        /* --- 6. HIERARCHIA --- */
         .matrix-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
         }
@@ -232,15 +221,14 @@
         
         .col-head { font-family: var(--font-head); font-size: 1.5rem; border-bottom: 2px solid #333; margin-bottom: 20px; color: #ccc; }
 
-        /* Sloty w hierarchii */
+        /* Sloty */
         .h-slot {
             background: #0e0e0e; padding: 12px; margin-bottom: 10px; border-radius: var(--radius-sm);
             display: flex; align-items: center; gap: 15px; border: 1px solid #222;
         }
         .h-slot.primary { border-left: 4px solid var(--accent-blue); }
-        .h-slot.contest { border-left: 4px solid #fff; }
+        .h-slot.unstable { border-left: 4px solid var(--accent-yellow); }
         
-        /* Zmiennicy 10 i 17 równi */
         .equal-row { display: flex; gap: 10px; }
         .h-slot.equal { flex: 1; border-left: 4px solid #555; }
 
@@ -254,7 +242,7 @@
 
         .future-note { text-align: center; color: #555; font-size: 0.8rem; margin-top: 15px; font-style: italic; }
 
-        /* Karty Rezerw */
+        /* Zasoby */
         .res-card { background: #0f0f0f; padding: 15px; border-radius: var(--radius-sm); margin-bottom: 10px; border: 1px solid #252525; }
         .res-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #222; padding-bottom: 5px; }
         .res-head strong { font-size: 1.2rem; font-family: var(--font-head); }
@@ -278,12 +266,11 @@
         .vis-home { background: linear-gradient(135deg, #000, #222); }
         .vis-away { background: linear-gradient(135deg, #222, #444); }
         .vis-gk { background: linear-gradient(135deg, #001100, #002200); }
-        
         .item-info { padding: 20px; text-align: center; }
         .price { color: var(--accent-orange); font-weight: 700; font-size: 1.2rem; display: block; margin: 5px 0 15px 0; }
         .btn-shop {
             width: 100%; background: transparent; border: 1px solid #444; color: #fff; padding: 10px; 
-            border-radius: var(--radius-pill); cursor: pointer; font-weight: 600; transition: 0.2s;
+            border-radius: var(--radius-lg); cursor: pointer; font-weight: 600; transition: 0.2s;
         }
         .btn-shop:hover { background: var(--accent-orange); border-color: var(--accent-orange); color: #000; }
 
@@ -297,18 +284,15 @@
 
         footer { text-align: center; padding: 40px; color: #555; font-size: 0.9rem; margin-top: 50px; border-top: 1px solid #222; }
 
-        /* --- RESPONSYWNOŚĆ (MOBILE) --- */
+        /* --- RWD --- */
         @media (max-width: 900px) {
             #hero h1 { font-size: 4rem; }
             .squad-layout { grid-template-columns: 1fr; }
             .field-zone { height: 400px; }
             .dot { width: 35px; height: 35px; font-size: 1rem; }
-            .dot-contest { width: 60px; font-size: 0.9rem; }
-            
             .history-box { flex-direction: column; text-align: center; }
             .h-score { font-size: 4rem; }
             
-            /* Menu Mobilne */
             .hamburger { display: flex; z-index: 1001; }
             .nav-links { 
                 position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; 
@@ -389,7 +373,7 @@
                             <div class="crease bottom"></div>
                             
                             <a href="#card-9" class="dot pos-la dot-skill">9</a>
-                            <a href="#card-810" class="dot pos-ra dot-contest">8 | 10</a>
+                            <a href="#card-10" class="dot pos-ra dot-warn">10</a> <!-- Zmiana na 10 z ostrzeżeniem -->
                             <a href="#card-6" class="dot pos-c dot-mvp">6</a>
                             <a href="#card-11" class="dot pos-ld dot-warn">11</a>
                             <a href="#card-13" class="dot pos-rd dot-teal">13</a>
@@ -430,17 +414,18 @@
                             </div>
                         </div>
 
-                        <!-- 8 vs 10 (Contest) -->
-                        <div id="card-810" class="player-card">
+                        <!-- Nr 10 (Niepewny - Nowy Prawy Atak) -->
+                        <div id="card-10" class="player-card style-warn">
                             <div class="card-content">
-                                <div class="card-num" style="font-size:2rem;">08/10</div>
+                                <div class="card-num">10</div>
                                 <div class="card-info">
-                                    <h3>STREFA WALKI</h3>
-                                    <div class="contest-flex">
-                                        <div class="c-box"><strong>08</strong><span>Stabilność</span></div>
-                                        <div class="c-box"><strong>10</strong><span>Dynamika</span></div>
+                                    <h3>DYNAMIKA</h3>
+                                    <div class="stat-bar">
+                                        <span class="stat-label" style="color:#ffd700;">STABILNOŚĆ (NISKA)</span>
+                                        <div class="progress-track"><div class="progress-fill" style="width: 40%; background: #ffd700;"></div></div>
                                     </div>
-                                    <p style="margin-top:10px;">Otwarta rywalizacja o miejsce w składzie.</p>
+                                    <p style="color:#ffd700; font-weight:700;">STATUS: ZAGROŻONY</p>
+                                    <p>Wstawiony do składu eksperymentalnie. Pozycja wysoce niestabilna, możliwe zmiany w każdej chwili.</p>
                                 </div>
                             </div>
                         </div>
@@ -451,7 +436,7 @@
                                 <div class="card-num">11</div>
                                 <div class="card-info">
                                     <h3>DEFENSOR</h3>
-                                    <p style="color:#ffd700; font-weight:700;">WYMAGANA KOREKTA: Gra jedną ręką jest zabroniona.</p>
+                                    <p style="color:#ffd700; font-weight:700;">KOREKTA: Gra jedną ręką zabroniona.</p>
                                     <p>Musi trzymać kij oburącz, aby utrzymać miejsce.</p>
                                 </div>
                             </div>
@@ -488,7 +473,7 @@
                         <div class="col-head">HIERARCHIA: LEWA OBRONA</div>
                         <div class="h-slot primary">
                             <div class="h-badge">11</div>
-                            <div class="h-desc"><strong>PEWNIAK</strong><small>Wymagana korekta chwytu</small></div>
+                            <div class="h-desc"><strong>PEWNIAK</strong><small>Wymagana korekta</small></div>
                         </div>
                         
                         <div style="text-align:center; color:#666; font-size:0.75rem; margin: 8px 0;">ZMIENNICY (RÓWNY STATUS)</div>
@@ -506,13 +491,22 @@
                         <div class="future-note">Dalsze informacje zostaną dodane później.</div>
                     </div>
 
-                    <!-- Prawy Atak -->
+                    <!-- Prawy Atak (Zaktualizowany) -->
                     <div class="matrix-col">
                         <div class="col-head">HIERARCHIA: PRAWY ATAK</div>
-                        <div class="h-slot contest">
-                            <div style="font-family:var(--font-head); font-size:1.5rem; color:#fff; margin-right:10px;">08 vs 10</div>
-                            <div class="h-desc"><strong>RYWALIZACJA OTWARTA</strong><small>Status równy. Decyduje dyspozycja.</small></div>
+                        
+                        <div class="h-slot unstable">
+                            <div class="h-badge" style="color:#ffd700;">10</div>
+                            <div class="h-desc"><strong style="color:#ffd700;">STARTER (CHWILOWY)</strong><small>Bardzo możliwe zmiany</small></div>
                         </div>
+                        
+                        <div style="text-align:center; font-size:1.2rem; color:#555;">⬇</div>
+                        
+                        <div class="h-slot equal">
+                            <div class="h-badge">08</div>
+                            <div class="h-desc"><strong>ALTERNATYWA</strong><small>Czeka na wejście</small></div>
+                        </div>
+
                         <div class="future-note">Dalsze informacje zostaną dodane później.</div>
                     </div>
 
@@ -530,10 +524,10 @@
 
                         <div class="res-card">
                             <div class="res-head">
-                                <strong>NR 10</strong>
+                                <strong>NR 08</strong>
                                 <span class="status-ok">GOTOWY</span>
                             </div>
-                            <p>Uniwersalny zmiennik. Walczy o atak, ale jest też opcją na obronę.</p>
+                            <p>Stabilny zawodnik. Obecnie rezerwowy na prawy atak, ale bliski składu.</p>
                         </div>
 
                         <div class="res-card critical">
@@ -541,7 +535,7 @@
                                 <strong>NR 21</strong>
                                 <span class="status-bad">NISKI POZIOM</span>
                             </div>
-                            <p>Najsłabsze ogniwo. Wymaga pracy u podstaw. Głęboka rezerwa.</p>
+                            <p>Najsłabsze ogniwo. Wymaga pracy u podstaw. Głęboka rezerwa. ble ble ble</p>
                         </div>
                     </div>
 
