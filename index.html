@@ -17,7 +17,7 @@
             <ul class="nav-links">
                 <li><a href="#hero">Start</a></li>
                 <li><a href="#arenas">Dyscypliny</a></li>
-                <li><a href="#squad">Taktyka (19.11)</a></li>
+                <li><a href="#squad">Taktyka</a></li>
                 <li><a href="#shop">Sklep</a></li>
                 <li><a href="#history">Historia</a></li>
             </ul>
@@ -39,7 +39,6 @@
             </div>
         </section>
 
-        <!-- SEKCJA DYSCYPLIN (Zaktualizowana kolejność) -->
         <section id="arenas">
             <div class="container">
                 <div class="section-header reveal">
@@ -47,15 +46,11 @@
                     <p>Hierarchia Dyscyplin Los Kabanos</p>
                 </div>
                 <div class="arenas-container reveal">
-                    
-                    <!-- Główna dyscyplina -->
                     <div class="featured-arena">
                         <div class="arena-icon">🏒</div>
                         <h3>Unihokej (Korona)</h3>
                         <p>Fundament tożsamości. Tutaj jesteśmy najmocniejsi. Szybkość, agresja i precyzja.</p>
                     </div>
-                    
-                    <!-- Pozostałe dyscypliny -->
                     <div class="other-arenas-grid">
                         <div class="arena-card">
                             <div class="arena-icon">🤾</div>
@@ -73,7 +68,6 @@
                             <div class="arena-icon">🏀</div>
                             <h4>Koszykówka</h4>
                         </div>
-                        <!-- Wycofane -->
                         <div class="arena-card retired">
                             <div class="arena-icon">⭕</div>
                             <h4>Ringo (Wycofane)</h4>
@@ -87,58 +81,61 @@
         <section id="squad">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2>Raport Taktyczny: Wczesny Szkic</h2>
-                    <div class="date-badge">Data raportu: 19.11</div>
+                    <h2>Raport Taktyczny</h2>
+                    <div class="date-badge">Aktualizacja: 19.11</div>
                 </div>
 
                 <div class="warning-banner reveal">
-                    ⚠️ <strong>UWAGA:</strong> Skład eksperymentalny. Prawy atak i Lewa obrona podlegają rotacji.
+                    ⚠️ <strong>UWAGA:</strong> Skład eksperymentalny. System zmian (rotacja minutowa) zostanie opracowany i opublikowany wkrótce.
                 </div>
 
                 <div class="squad-wrapper reveal">
                     
-                    <!-- UI Boiska (Poprawione kropki - bez ruchu) -->
-                    <div class="field-container">
-                        <div class="rink">
-                            <div class="rink-lines"></div>
-                            <div class="goal-crease top"></div>
-                            <div class="goal-crease bottom"></div>
-                            
-                            <!-- Lewy Atak (Nr 9) -->
-                            <a href="#card-9" class="player-dot pos-la" title="Lewy Atak">
-                                <span class="p-num">9</span>
-                                <span class="p-role">LA</span>
-                            </a>
-                            
-                            <!-- Prawy Atak (Nr 8/10) - WALKA -->
-                            <a href="#card-10" class="player-dot pos-ra warning-dot" title="Prawy Atak - Rywalizacja">
-                                <span class="p-num">8/10</span>
-                                <span class="p-role">PA</span>
-                            </a>
+                    <!-- UI Boiska -->
+                    <div class="field-wrapper">
+                        <div class="field-container">
+                            <div class="rink">
+                                <div class="rink-lines"></div>
+                                <div class="goal-crease top"></div>
+                                <div class="goal-crease bottom"></div>
+                                
+                                <!-- Lewy Atak -->
+                                <a href="#card-9" class="player-dot pos-la" title="Lewy Atak">
+                                    <span class="p-num">9</span>
+                                    <span class="p-role">LA</span>
+                                </a>
+                                
+                                <!-- Prawy Atak (Nr 8 ma większe szanse) -->
+                                <a href="#card-8" class="player-dot pos-ra warning-dot" title="Prawy Atak">
+                                    <span class="p-num">8/10</span>
+                                    <span class="p-role">PA</span>
+                                </a>
 
-                            <!-- Środek (Nr 6) -->
-                            <a href="#card-6"  class="player-dot pos-c mvp-dot"  title="Środek - Kapitan">
-                                <span class="p-num">6</span>
-                                <span class="p-role">C</span>
-                            </a>
+                                <!-- Środek -->
+                                <a href="#card-6"  class="player-dot pos-c mvp-dot"  title="Środek">
+                                    <span class="p-num">6</span>
+                                    <span class="p-role">C</span>
+                                </a>
 
-                            <!-- Lewa Obrona (Nr 10/11) - ZAGROŻONA -->
-                            <a href="#card-11" class="player-dot pos-ld warning-dot" title="Lewa Obrona - Zagrożona">
-                                <span class="p-num">10/11</span>
-                                <span class="p-role">LO</span>
-                            </a>
+                                <!-- Lewa Obrona -->
+                                <a href="#card-11" class="player-dot pos-ld warning-dot" title="Lewa Obrona">
+                                    <span class="p-num">11</span>
+                                    <span class="p-role">LO</span>
+                                </a>
 
-                            <!-- Prawa Obrona (Nr 13) -->
-                            <a href="#card-13" class="player-dot pos-rd" title="Prawa Obrona">
-                                <span class="p-num">13</span>
-                                <span class="p-role">PO</span>
-                            </a>
+                                <!-- Prawa Obrona -->
+                                <a href="#card-13" class="player-dot pos-rd" title="Prawa Obrona">
+                                    <span class="p-num">13</span>
+                                    <span class="p-role">PO</span>
+                                </a>
 
-                            <!-- Bramkarz -->
-                            <div class="player-dot pos-gk">
-                                <span class="p-icon">🥅</span>
+                                <!-- Bramkarz -->
+                                <div class="player-dot pos-gk">
+                                    <span class="p-icon">🥅</span>
+                                </div>
                             </div>
                         </div>
+                        <p class="field-caption">Kliknij zawodnika, aby zobaczyć szczegóły.</p>
                     </div>
 
                     <!-- Karty Graczy -->
@@ -153,16 +150,11 @@
                                     <span class="star">★ MVP</span>
                                 </div>
                                 <h3>Techniczny Dominator</h3>
-                                <div class="stat-row"><span>Status:</span> <span class="stat-val green">Stabilny</span></div>
-                                <div class="stat-row"><span>Poziom:</span> <span class="stat-val">Bardzo Zaawansowany</span></div>
+                                <div class="stat-row"><span>Status:</span> <span class="stat-val green">Pewny / Stabilny</span></div>
                                 <p class="player-desc">Najlepszy drybling i strzał w zespole. Kreator gry.</p>
                                 <div class="feedback-box strength">
                                     <h4>✅ ATUTY</h4>
                                     <p>Kontrola, wizja, skuteczność.</p>
-                                </div>
-                                <div class="feedback-box fix">
-                                    <h4>🎯 CEL (18.11)</h4>
-                                    <p>Poprawa kontroli przy strzale z pociągnięcia.</p>
                                 </div>
                             </div>
 
@@ -172,39 +164,40 @@
                                     <span class="role-badge atk">Lewy Atak (Nr 9)</span>
                                 </div>
                                 <h3>Snajper</h3>
-                                <div class="stat-row"><span>Status:</span> <span class="stat-val green">Raczej Stabilny</span></div>
-                                <p class="player-desc">Wicelider ofensywy. Potrafi strzelić z niemożliwych kątów.</p>
-                                <div class="feedback-box fix">
-                                    <h4>🛠️ DO POPRAWY</h4>
-                                    <p>Szybkość przyjęcia piłki w dynamice.</p>
+                                <div class="stat-row"><span>Status:</span> <span class="stat-val green">Stabilny</span></div>
+                                <p class="player-desc">Wicelider ofensywy. Magik sytuacji niemożliwych.</p>
+                                <div class="feedback-box strength">
+                                    <h4>✅ SUPER MOC</h4>
+                                    <p><strong>Niemożliwe kąty.</strong> Potrafi trafić w bramkę z pozycji, z których teoretycznie się nie da.</p>
                                 </div>
                             </div>
 
-                            <!-- PRAWY ATAK - NR 8/10 -->
-                            <div id="card-10" class="player-card warning">
+                            <!-- PRAWY ATAK - NR 8 (Walka z 10) -->
+                            <div id="card-8" class="player-card warning">
                                 <div class="card-header">
                                     <span class="role-badge atk">Prawy Atak (Nr 8 / 10)</span>
-                                    <span class="alert">⚠️ WALKA O SKŁAD</span>
+                                    <span class="alert">⚠️ RYWALIZACJA</span>
                                 </div>
-                                <h3>Strefa Rywalizacji</h3>
-                                <div class="stat-row"><span>Status:</span> <span class="stat-val red">Duża rotacja</span></div>
-                                <div class="stat-row"><span>Opcja A (Nr 10):</span> <span class="stat-val">Niepewny Rookie</span></div>
-                                <div class="stat-row"><span>Opcja B (Nr 8):</span> <span class="stat-val">Atakujący z ławki</span></div>
-                                <p class="player-desc">Najbardziej płynna pozycja. Nr 10 musi poprawić jakość strzału, Nr 8 naciska na wejście do pierwszego składu.</p>
+                                <h3>Strefa Walki</h3>
+                                <div class="stat-row"><span>Faworyt (Nr 8):</span> <span class="stat-val green">Rosnąca forma</span></div>
+                                <div class="stat-row"><span>Zagrożenie (Nr 10):</span> <span class="stat-val orange">Możliwe przesunięcie</span></div>
+                                <p class="player-desc">
+                                    Nr 8 ma obecnie większe szanse na pierwszy skład dzięki stabilności. 
+                                    Nr 10 jest rozważany jako zmiennik lub opcja na Lewą Obronę.
+                                </p>
                             </div>
 
                             <!-- LEWA OBRONA - NR 11 -->
                             <div id="card-11" class="player-card warning">
                                 <div class="card-header">
-                                    <span class="role-badge def">Lewa Obrona (Nr 10 / 11)</span>
+                                    <span class="role-badge def">Lewa Obrona (Nr 11)</span>
                                     <span class="alert">⚠️ ZAGROŻONA</span>
                                 </div>
                                 <h3>Defensor</h3>
-                                <div class="stat-row"><span>Status:</span> <span class="stat-val orange">Możliwa zmiana</span></div>
-                                <div class="stat-row"><span>Kij:</span> <span class="stat-val">Prawy</span></div>
+                                <div class="stat-row"><span>Alternatywa:</span> <span class="stat-val orange">Nr 10 może tu wejść</span></div>
                                 <div class="feedback-box fix">
-                                    <h4>⚠️ KOREKTA TECHNICZNA</h4>
-                                    <p><strong>Trzymanie kija!</strong> Zawodnik nagminnie puszcza jedną rękę. Wymagana gra oburącz.</p>
+                                    <h4>⚠️ KRYTYCZNA KOREKTA</h4>
+                                    <p><strong>Trzymanie kija!</strong> Bezwzględny nakaz gry oburącz. Puszczanie kija jedną ręką grozi ławką.</p>
                                 </div>
                             </div>
 
@@ -215,7 +208,6 @@
                                 </div>
                                 <h3>Wojownik</h3>
                                 <div class="stat-row"><span>Status:</span> <span class="stat-val green">Standardowy</span></div>
-                                <div class="stat-row"><span>Kij:</span> <span class="stat-val">Lewy</span></div>
                                 <p class="player-desc">Nadrabia braki teoretyczne wielkim sercem. Walczy o każdą piłkę.</p>
                             </div>
 
@@ -224,27 +216,19 @@
                         <!-- ŁAWKA -->
                         <div class="bench-section reveal">
                             <h3>👥 Ławka Rezerwowych</h3>
+                            <p class="bench-note">System zmian zostanie ogłoszony wkrótce.</p>
                             <div class="bench-grid">
                                 <div class="bench-card potential">
                                     <div class="b-num">17</div>
-                                    <div class="b-info">
-                                        <h4>Solidny Zmiennik</h4>
-                                        <p>Poziom średni, kij prawy. Blisko 1. składu.</p>
-                                    </div>
+                                    <div class="b-info"><h4>Solidny Zmiennik</h4></div>
                                 </div>
-                                <div class="bench-card best">
-                                    <div class="b-num">8</div>
-                                    <div class="b-info">
-                                        <h4>Najlepszy Rezerwowy</h4>
-                                        <p>Poziom średni. Walczy o Prawy Atak.</p>
-                                    </div>
+                                <div class="bench-card potential">
+                                    <div class="b-num">10</div>
+                                    <div class="b-info"><h4>Rotacja / LO</h4></div>
                                 </div>
                                 <div class="bench-card weak">
                                     <div class="b-num">21</div>
-                                    <div class="b-info">
-                                        <h4>Głęboka rezerwa</h4>
-                                        <p>Najsłabszy w kadrze. Wymaga pracy.</p>
-                                    </div>
+                                    <div class="b-info"><h4>Rezerwa</h4></div>
                                 </div>
                             </div>
                         </div>
@@ -258,77 +242,81 @@
             <div class="container">
                 <div class="section-header reveal">
                     <h2>Zbrojownia</h2>
-                    <p>Pokaż barwy.</p>
+                    <p>Symboliczna cena. Bezcenna wartość.</p>
                 </div>
 
                 <div class="shop-grid">
                     <div class="product-card reveal">
                         <div class="product-image-container">
-                            <div class="placeholder-img home">TRADYCYJNA</div>
+                            <div class="placeholder-img home">DOMOWA</div>
                         </div>
                         <div class="product-info">
                             <h3>Jersey Domowy</h3>
-                            <p class="product-price">2 PLN</p>
-                            <p class="personalization-info">✨ Własne nazwisko i numer: <strong>+0,50 PLN</strong></p>
-                            <button class="product-btn">Konfiguruj</button>
+                            <p class="product-price">2,00 PLN</p>
+                            <p class="personalization-info">Własne nazwisko i numer w cenie.</p>
+                            <button class="product-btn">Zamów</button>
                         </div>
                     </div>
                     
                     <div class="product-card reveal">
                         <div class="product-image-container">
-                            <div class="placeholder-img away">WYJAZDOWA</div>
+                            <div class="placeholder-img away">WYJAZD</div>
                         </div>
                         <div class="product-info">
                             <h3>Jersey Wyjazdowy</h3>
-                            <p class="product-price">2 PLN</p>
-                            <p class="personalization-info">✨ Własne nazwisko i numer: <strong>+0,50 PLN</strong></p>
-                            <button class="product-btn">Konfiguruj</button>
+                            <p class="product-price">2,00 PLN</p>
+                            <p class="personalization-info">Własne nazwisko i numer w cenie.</p>
+                            <button class="product-btn">Zamów</button>
                         </div>
                     </div>
 
                     <div class="product-card reveal">
                         <div class="product-image-container">
-                            <div class="placeholder-img gk">BRAMKARSKA</div>
+                            <div class="placeholder-img gk">BRAMKARZ</div>
                         </div>
                         <div class="product-info">
                             <h3>Bluza Bramkarska</h3>
-                            <p class="product-price">2 PLN</p>
-                            <p class="personalization-info">✨ Własne nazwisko i numer: <strong>+0,50 PLN</strong></p>
-                            <button class="product-btn">Konfiguruj</button>
+                            <p class="product-price">2,00 PLN</p>
+                            <p class="personalization-info">Własne nazwisko i numer w cenie.</p>
+                            <button class="product-btn">Zamów</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- NOWA SEKCJA: HISTORIA I OPIS -->
         <section id="history">
             <div class="container reveal">
-                <div class="history-content">
+                <div class="history-content styled-history">
                     <div class="history-header">
-                        <h2>Więcej niż Klub. Dziedzictwo.</h2>
+                        <h2>Dziedzictwo i Zemsta</h2>
                         <div class="divider"></div>
                     </div>
                     
                     <div class="history-text">
-                        <p>
-                            <strong>Los Kabanos Warszawa</strong> to nie jest zwykła drużyna sportowa. To idea, która narodziła się na parkiecie do unihokeja i rozlała na inne dyscypliny. Od piłki ręcznej, przez siatkówkę, aż po piłkę nożną i koszykówkę - gdziekolwiek się pojawiamy, naszym celem jest taktyczna dominacja.
-                        </p>
-                        
+                        <div class="revenge-box">
+                            <h3>🔥 Rachunki do wyrównania</h3>
+                            <p class="dramatic-text">
+                                Rok temu byliśmy o krok. Finał. Emocje sięgały zenitu. <br>
+                                <strong>Przegraliśmy 0:2.</strong> <br>
+                                Ten wynik wypalił nam się w pamięci. Nie zapomnieliśmy tamtego gwizdka. 
+                                W tym roku cel jest tylko jeden: <strong>Zwycięstwo.</strong> 
+                                Nie bierzemy jeńców. Wracamy po to, co nasze.
+                            </p>
+                        </div>
+
                         <div class="memorial-box">
-                            <h3>🕊️ Geneza Nazwy</h3>
+                            <h3>🕊️ Geneza Nazwy "Kabanos"</h3>
                             <p>
-                                Nazwa "Kabanos" może brzmieć niepozornie, ale dla nas jest święta. Została przyjęta jako 
-                                <strong>wieczny hołd dla jednego z naszych poległych zawodników</strong>. 
-                                Jego duch walki, nieustępliwość i uśmiech są wpisane w DNA tego herbu. 
-                                Za każdym razem, gdy wychodzimy na boisko, gramy dla niego. Nr 1 w naszych sercach na zawsze.
+                                To nie jest żart. To hołd. Nazwa została przyjęta ku pamięci jednego z naszych 
+                                <strong>poległych zawodników</strong>. Jego duch walki żyje w tym herbie. 
+                                Gramy dla Niego.
                             </p>
                         </div>
 
                         <p>
-                            Jesteśmy organizacją o płynnej strukturze. Nasz skład ewoluuje z tygodnia na tydzień. 
-                            Nie ma tu miejsca na "święte krowy". Jeśli jesteś w formie - grasz. Jeśli nie - walczysz o powrót z ławki. 
-                            To jest prawo Los Kabanos.
+                            Od unihokeja po koszykówkę - zasady się zmieniają, mentalność pozostaje.
+                            Jesteśmy Los Kabanos Warszawa.
                         </p>
                     </div>
                 </div>
@@ -339,7 +327,7 @@
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 Los Kabanos Warszawa. Pamiętamy.</p>
+            <p>&copy; 2025 Los Kabanos Warszawa. Rok Zemsty.</p>
         </div>
     </footer>
 
